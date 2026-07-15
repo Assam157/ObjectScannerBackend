@@ -1,4 +1,4 @@
-import io
+ import io
 import os
 import base64
 import time
@@ -155,7 +155,7 @@ def detect():
         ).decode("utf-8")
 
         ##################################################
-        # Decide object type
+        # Decide object type (UPDATED HARDCORDED LOGIC)
         ##################################################
 
         object_type = "notfound"
@@ -163,12 +163,17 @@ def detect():
         if "chair" in detected_labels:
             object_type = "chair"
 
-        elif (
-            "monitor" in detected_labels
-            or "tv" in detected_labels
-            or "tvmonitor" in detected_labels
-        ):
+        elif "monitor" in detected_labels:
             object_type = "monitor"
+
+        elif "hammer" in detected_labels:
+            object_type = "hammer"
+
+        elif "scissor" in detected_labels or "scissors" in detected_labels:
+            object_type = "scissor"
+
+        elif "spoon" in detected_labels:
+            object_type = "spoon"
 
         ##################################################
         # Response
