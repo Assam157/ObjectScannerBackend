@@ -28,7 +28,7 @@ print("=" * 60)
 print("Loading YOLO Model...")
 print("=" * 60)
 
-MODEL_PATH = "best (2).pt"
+MODEL_PATH = "A.pt"
 
 model = YOLO(MODEL_PATH)
 
